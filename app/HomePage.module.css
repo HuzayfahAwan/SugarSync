@@ -1,0 +1,187 @@
+/* Main layout */
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  padding: 1rem 0;
+  background: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.headerTitle {
+  margin-left: 0.5rem;
+  font-size: 2rem;
+  color: #333;
+  animation: bounce 1s ease-out;
+}
+.icon {
+  color: #007bff;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hero Section */
+.hero {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/images/medical-bg.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+.heroOverlay {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 600px;
+  z-index: 2;
+}
+.heroTitle {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: #333;
+}
+.heroSubtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+.buttonGroup a {
+  margin: 0 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.primaryBtn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  animation: pulse 2s infinite;
+}
+.primaryBtn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+.secondaryBtn {
+  background: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+.secondaryBtn:hover {
+  background: #007bff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  padding: 1rem 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+/* Background Floating Icons */
+.backgroundAnimation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.floatingIcon {
+  position: absolute;
+  opacity: 0.6;
+  animation: floatPath 15s linear infinite;
+}
+
+/* Positioning for floating icons */
+.floatingIcon1 {
+  top: 10%;
+  left: -50px;
+  animation-delay: 0s;
+}
+.floatingIcon2 {
+  top: 40%;
+  left: -50px;
+  animation-delay: 3s;
+}
+.floatingIcon3 {
+  top: 70%;
+  left: -50px;
+  animation-delay: 6s;
+}
+
+/* Keyframe Animations */
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+@keyframes floatPath {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(110vw);
+    opacity: 0;
+  }
+}
+
+/* Applying Animation Classes */
+.slideInDown {
+  animation: slideInDown 1s ease-out;
+}
+.slideInLeft {
+  animation: slideInLeft 1s ease-out;
+}
